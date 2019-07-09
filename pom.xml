@@ -88,13 +88,15 @@
 		          <muleVersion>3.9.0</muleVersion> 
 		          <username>glakshmanan</username> 
 		          <password>aCON50677!</password> 
-		         <!--  <applicationName>${artifactId}</applicationName>--> 
+		           <applicationName>cicd_project</applicationName>
 		          <environment>Development</environment> 
 		         <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
 		          <region>us-west-2</region>
 		       <!--     <uri>${anypoint.uri}</uri> -->
 		          <workerType>Micro</workerType>
 		        <!--    <workers>${cloudhub.workers}</workers>-->
+		        <application>target/cicd_project-1.0.0-SNAPSHOT.zip</application>
+       			 <applicationName>cicd_project</applicationName>
 		        </configuration>
 		        <executions>
 		          <execution>
