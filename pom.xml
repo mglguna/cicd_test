@@ -87,7 +87,7 @@
 		          <deploymentType>cloudhub</deploymentType>
 		          <muleVersion>${mule.version}</muleVersion> 
 		          <username>${cloudhub.username}</username> 
-		          <password>${cloudhub.username}</password> 
+		          <password>${cloudhub.password}</password> 
 		           <applicationName>${artifactId}</applicationName>
 		          <environment>${cloudhub.env}</environment> 
 		         <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
