@@ -9,6 +9,6 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
     </spring:beans>
     <munit:test name="cicd-test-cicd_projectFlowTest" description="Test">
         <flow-ref name="cicd_projectFlow" doc:name="Flow-ref to cicd_projectFlow"/>
-        <munit:assert-on-equals expectedValue="#['Hello World']" actualValue="#[payload]" doc:name="Assert Equals"/>
+        <munit:assert-on-equals expectedValue="#['Hello CICD-PROJECT']" actualValue="#[payload]" doc:name="Assert Equals"/>
     </munit:test>
 </mule>
