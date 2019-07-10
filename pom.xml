@@ -87,9 +87,9 @@
 		          <deploymentType>cloudhub</deploymentType>
 		          <muleVersion>${mule.version}</muleVersion> 
 		          <username>${cloudhub.username}</username> 
-		          <password>aCON50677!</password> 
+		          <password>${cloudhub.username}</password> 
 		           <applicationName>${artifactId}</applicationName>
-		          <environment>Development</environment> 
+		          <environment>${cloudhub.env}</environment> 
 		         <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
 		          <region>us-west-2</region>
 		       <!--     <uri>${anypoint.uri}</uri> -->
