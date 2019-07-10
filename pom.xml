@@ -85,18 +85,18 @@
 			  <version>2.2.1</version>
 			  <configuration>
 		          <deploymentType>cloudhub</deploymentType>
-		          <muleVersion>3.9.0</muleVersion> 
-		          <username>glakshmanan</username> 
+		          <muleVersion>${mule.version}</muleVersion> 
+		          <username>${cloudhub.username}</username> 
 		          <password>aCON50677!</password> 
-		           <applicationName>cicd-project</applicationName>
+		           <applicationName>${artifactId}</applicationName>
 		          <environment>Development</environment> 
 		         <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
 		          <region>us-west-2</region>
 		       <!--     <uri>${anypoint.uri}</uri> -->
 		          <workerType>Micro</workerType>
 		        <!--    <workers>${cloudhub.workers}</workers>-->
-		        <application>target/cicd-project-1.0.0-SNAPSHOT.zip</application>
-       			 <applicationName>cicd-project</applicationName>
+		        <application>target/${artifactId}-${version}.zip</application>
+       			 <applicationName>${artifactId}</applicationName>
 		        </configuration>
 		        <executions>
 		          <execution>
