@@ -111,7 +111,7 @@
             <environment>${cloudhub.env}</environment> 
            <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
             <region>us-west-2</region>
-            <uri>https://anypoint.mulesoft.com/cloudhub/#/</uri> 
+        <!--      <uri>https://anypoint.mulesoft.com/cloudhub/#/</uri> -->
             <workerType>Micro</workerType> 
             <application>target/${artifactId}-${version}.zip</application>
        			 <applicationName>${artifactId}</applicationName>
