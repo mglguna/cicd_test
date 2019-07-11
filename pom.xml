@@ -103,7 +103,8 @@
        			 <applicationName>${artifactId}</applicationName>
 		        </configuration>-->
 		         <configuration>
-          <cloudHubDeployment>
+          <configuration>
+		          <deploymentType>cloudhub</deploymentType>
             <muleVersion>${mule.version}</muleVersion> 
             <username>${cloudhub.username}</username> 
             <password>${cloudhub.password}</password> 
@@ -113,8 +114,9 @@
             <region>us-west-2</region>
             <uri>https://anypoint.mulesoft.com/cloudhub/#/</uri> 
             <workerType>Micro</workerType> 
+            <application>target/${artifactId}-${version}.zip</application>
+       			 <applicationName>${artifactId}</applicationName>
             <!--  <workers>${cloudhub.workers}</workers>-->
-          </cloudHubDeployment>
         </configuration>
 		        <executions>
 		          <execution>
