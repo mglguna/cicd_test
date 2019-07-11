@@ -2,9 +2,8 @@ pipeline {
   agent any
   stages {
 	  	stage('Build') { 
-	      steps {
-	      	def mvnSettings = '/Users/Vishnu/apache-maven-3.6.1/conf/settings.xml'
-	        sh "'/usr/local/Cellar/maven/3.6.1/bin/mvn' clean package --settings ${mvnSettings} -P foo"
+	      steps { 
+	        sh "'/usr/local/Cellar/maven/3.6.1/bin/mvn' clean package --settings '/Users/Vishnu/apache-maven-3.6.1/conf/settings.xml' -P foo"
 	      }
 	    }
 	    stage('Unit Test') { 
