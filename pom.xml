@@ -102,7 +102,6 @@
 		        <application>target/${artifactId}-${version}.zip</application>
        			 <applicationName>${artifactId}</applicationName>
 		        </configuration>-->
-		         <configuration>
           <configuration>
 		          <deploymentType>cloudhub</deploymentType>
             <muleVersion>${mule.version}</muleVersion> 
