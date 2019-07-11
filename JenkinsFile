@@ -1,18 +1,41 @@
 pipeline {
   agent any
+  
+  tools{
+	maven 'maven 3'
+	jdk 'java 8'
+	}
   stages {
-    stage('Unit Test') { 
-      steps {
-        sh 'mvn clean test'
-      }
-    }
-    stage('Deploy CloudHub') { 
-      environment {
-        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
-      }
-      steps {
-        sh 'mvn deploy -P cloudhub -Dmule.version=3.9.0 -Dcloudhub.username=${ANYPOINT_CREDENTIALS_USR} -Dcloudhub.password=${ANYPOINT_CREDENTIALS_PSW} -Dcloudhub.env=Development' 
-      }
-    }
-  }
+  	stage ("initialize") {
+		steps {
+		sh '''
+		echo "PATH = ${PATH}"
+		echo "M2_HOME = ${M2_HOME}"
+		'''
+		}	
+	}
+	  stage('Build') { 
+	      steps {
+	        sh 'mvn clean compile'
+	      }
+	    }
+	  	stage('Build') { 
+	      steps {
+	        sh 'mvn clean package'
+	      }
+	    }
+	    stage('Unit Test') { 
+	      steps {
+	        sh 'mvn clean test'
+	      }
+	    }
+	    stage('Deploy CloudHub') { 
+		      environment {
+		        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+		      }
+		      steps {
+		        sh 'mvn deploy -P cloudhub -Dmule.version=3.9.0 -Dcloudhub.username=${ANYPOINT_CREDENTIALS_USR} -Dcloudhub.password=${ANYPOINT_CREDENTIALS_PSW} -Dcloudhub.env=Development' 
+		      }
+	    }
+  	}
 }
