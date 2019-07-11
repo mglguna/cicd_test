@@ -20,6 +20,13 @@
 
 	<build>
 		<plugins>
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
@@ -101,7 +108,7 @@
             <username>${cloudhub.username}</username> 
             <password>${cloudhub.password}</password> 
             <applicationName>${artifactId}</applicationName> 
-            <environment>${cloundhub.env}</environment> 
+            <environment>${cloudhub.env}</environment> 
            <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
             <region>us-west-2</region>
             <uri>https://anypoint.mulesoft.com/cloudhub/#/</uri> 
