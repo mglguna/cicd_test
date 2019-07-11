@@ -83,21 +83,32 @@
 			  <groupId>org.mule.tools.maven</groupId>
 			  <artifactId>mule-maven-plugin</artifactId>
 			  <version>2.2.1</version>
-			  <configuration>
+			 <!--   <configuration>
 		          <deploymentType>cloudhub</deploymentType>
 		          <muleVersion>${mule.version}</muleVersion> 
 		          <username>${cloudhub.username}</username> 
 		          <password>${cloudhub.password}</password> 
 		           <applicationName>${artifactId}</applicationName>
-		          <environment>${cloudhub.env}</environment> 
-		         <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
+		          <environment>${cloudhub.env}</environment>
 		          <region>us-west-2</region>
-		       <!--     <uri>${anypoint.uri}</uri> -->
 		          <workerType>Micro</workerType>
-		        <!--    <workers>${cloudhub.workers}</workers>-->
 		        <application>target/${artifactId}-${version}.zip</application>
        			 <applicationName>${artifactId}</applicationName>
-		        </configuration>
+		        </configuration>-->
+		         <configuration>
+          <cloudHubDeployment>
+            <muleVersion>${mule.version}</muleVersion> 
+            <username>${cloudhub.username}</username> 
+            <password>${cloudhub.password}</password> 
+            <applicationName>${artifactId}</applicationName> 
+            <environment>${cloundhub.env}</environment> 
+           <!--   <businessGroup>${anypoint.businessGroup}</businessGroup>-->
+            <region>us-west-2</region>
+            <uri>https://anypoint.mulesoft.com/cloudhub/#/</uri> 
+            <workerType>Micro</workerType> 
+            <!--  <workers>${cloudhub.workers}</workers>-->
+          </cloudHubDeployment>
+        </configuration>
 		        <executions>
 		          <execution>
 		            <id>deploy</id>
