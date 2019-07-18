@@ -1,4 +1,4 @@
-<testsuite name="cicd-test" time="0.302" failures="0" errors="0" skipped="0" tests="1">
+<testsuite name="cicd-test" time="0.512" failures="0" errors="0" skipped="0" tests="1">
   <properties>
     <property key="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property key="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib"/>
@@ -64,5 +64,5 @@
     <property key="mule.testingMode" value="true"/>
     <property key="mule.working.dir" value="/Users/Vishnu/AnypointStudio/Apttus/cicd_project/target/.mule"/>
   </properties>
-  <testcase time="0.081" name="cicd-test-cicd_projectFlowTest" classname="cicd-test"/>
+  <testcase time="0.086" name="cicd-test-cicd_projectFlowTest" classname="cicd-test"/>
 </testsuite>
