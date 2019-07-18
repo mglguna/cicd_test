@@ -101,6 +101,9 @@
             <workerType>Micro</workerType> 
             <application>target/${artifactId}-${version}.zip</application>
        			 <applicationName>${artifactId}</applicationName>
+       			 <properties>
+       			 	<mule.env>${mule.env}</mule.env>
+       			 </properties>
         </configuration>
 		        <executions>
 		          <execution>
