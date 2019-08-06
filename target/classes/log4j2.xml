@@ -28,7 +28,7 @@
                 <SizeBasedTriggeringPolicy size="10 MB" />
             </Policies>
         </RollingFile>
-       <!--   <HttpEventCollectorLog4jAppender name="HttpEventCollectorLog4jAppender"
+         <HttpEventCollectorLog4jAppender name="HttpEventCollectorLog4jAppender"
               url="https://input-prd-p-vghr9s6ddr7q.cloud.splunk.com:8088"
               token="0dff3bb8-923a-4d7b-8a1a-1d7662aa81eb"
               host=""
@@ -42,7 +42,7 @@
               batch_interval="10000"
               disableCertificateValidation="true">
             <PatternLayout pattern="%m"/>
-        </HttpEventCollectorLog4jAppender>-->
+        </HttpEventCollectorLog4jAppender>
         <Log4J2CloudhubLogAppender name="CLOUDHUB"
                                    addressProvider="com.mulesoft.ch.logging.DefaultAggregatorAddressProvider"
                                    applicationContext="com.mulesoft.ch.logging.DefaultApplicationContext"
@@ -91,7 +91,7 @@
         
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />
-            <!--  <AppenderRef ref="HttpEventCollectorLog4jAppender"/>-->
+            <AppenderRef ref="HttpEventCollectorLog4jAppender"/>
             <AppenderRef ref="Log4J2CloudhubLogAppender"/>
         </AsyncRoot>
     </Loggers>
