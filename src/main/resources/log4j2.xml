@@ -60,6 +60,7 @@
         
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />
+            <AppenderRef ref="HttpEventCollectorLog4jAppender"/>
         </AsyncRoot>
     </Loggers>
 </Configuration>
