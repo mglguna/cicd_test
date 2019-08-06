@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Configuration>
+<!--<Configuration>
 
-	<!--These are some of the loggers you can enable. 
+	These are some of the loggers you can enable. 
 	    There are several more you can find in the documentation. 
         Besides this log4j configuration, you can also use Java VM environment variables
         to enable other logs like network (-Djavax.net.debug=ssl or all) and 
         Garbage Collector (-XX:+PrintGC). These will be append to the console, so you will 
-        see them in the mule_ee.log file. -->
+        see them in the mule_ee.log file. 
 
 
     <Appenders>
@@ -15,8 +15,20 @@
             <PatternLayout pattern="%d [%t] %-5p %c - %m%n" />
             <SizeBasedTriggeringPolicy size="10 MB" />
             <DefaultRolloverStrategy max="10"/>
+        </RollingFile>-->
+        <Configuration status="INFO" name="cloudhub" packages="com.mulesoft.ch.logging.appender">
+    <Appenders>
+        <RollingFile name="FILE"
+                     fileName="/opt/mule/mule-CURRENT/logs/mule-${sys:domain}.log"
+                     filePattern="/opt/mule/mule-CURRENT/logs/mule-${sys:domain}-%i.log">
+
+            <PatternLayout pattern="[%d{MM-dd HH:mm:ss.SSS}] %-5p %c{1} [%t]: %m%n"/>
+            <DefaultRolloverStrategy max="10"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
         </RollingFile>
-         <HttpEventCollectorLog4jAppender name="HttpEventCollectorLog4jAppender"
+       <!--   <HttpEventCollectorLog4jAppender name="HttpEventCollectorLog4jAppender"
               url="https://input-prd-p-vghr9s6ddr7q.cloud.splunk.com:8088"
               token="0dff3bb8-923a-4d7b-8a1a-1d7662aa81eb"
               host=""
@@ -30,7 +42,26 @@
               batch_interval="10000"
               disableCertificateValidation="true">
             <PatternLayout pattern="%m"/>
-        </HttpEventCollectorLog4jAppender>
+        </HttpEventCollectorLog4jAppender>-->
+        <Log4J2CloudhubLogAppender name="CLOUDHUB"
+                                   addressProvider="com.mulesoft.ch.logging.DefaultAggregatorAddressProvider"
+                                   applicationContext="com.mulesoft.ch.logging.DefaultApplicationContext"
+                                   appendRetryIntervalMs="${sys:logging.appendRetryInterval}"
+                                   appendMaxAttempts="${sys:logging.appendMaxAttempts}"
+                                   batchSendIntervalMs="${sys:logging.batchSendInterval}"
+                                   batchMaxRecords="${sys:logging.batchMaxRecords}"
+                                   memBufferMaxSize="${sys:logging.memBufferMaxSize}"
+                                   journalMaxWriteBatchSize="${sys:logging.journalMaxBatchSize}"
+                                   journalMaxFileSize="${sys:logging.journalMaxFileSize}"
+                                   clientMaxPacketSize="${sys:logging.clientMaxPacketSize}"
+                                   clientConnectTimeoutMs="${sys:logging.clientConnectTimeout}"
+                                   clientSocketTimeoutMs="${sys:logging.clientSocketTimeout}"
+                                   serverAddressPollIntervalMs="${sys:logging.serverAddressPollInterval}"
+                                   serverHeartbeatSendIntervalMs="${sys:logging.serverHeartbeatSendIntervalMs}"
+                                   statisticsPrintIntervalMs="${sys:logging.statisticsPrintIntervalMs}">
+
+            <PatternLayout pattern="[%d{MM-dd HH:mm:ss}] %-5p %c{1} [%t]: %m%n"/>
+        </Log4J2CloudhubLogAppender>
     </Appenders>
     <Loggers>
     	
@@ -60,7 +91,8 @@
         
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />
-            <AppenderRef ref="HttpEventCollectorLog4jAppender"/>
+            <!--  <AppenderRef ref="HttpEventCollectorLog4jAppender"/>-->
+            <AppenderRef ref="Log4J2CloudhubLogAppender"/>
         </AsyncRoot>
     </Loggers>
 </Configuration>
