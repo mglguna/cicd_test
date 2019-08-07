@@ -38,8 +38,8 @@
               middleware=""
               send_mode="sequential"
               batch_size_bytes="102400"
-              batch_size_count="10"
-              batch_interval="10000"
+              batch_size_count="1"
+              batch_interval="10"
               disableCertificateValidation="true">
             <PatternLayout pattern="%m"/>
         </HttpEventCollectorLog4jAppender>
