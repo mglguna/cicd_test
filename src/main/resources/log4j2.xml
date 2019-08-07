@@ -90,9 +90,9 @@
         <AsyncLogger name="Tracking" level="WARN"/>
         
         <AsyncRoot level="INFO">
-            <AppenderRef ref="file" />
+            <AppenderRef ref="FILE" />
             <AppenderRef ref="HttpEventCollectorLog4jAppender"/>
-            <AppenderRef ref="Log4J2CloudhubLogAppender"/>
+            <AppenderRef ref="CLOUDHUB"/>
         </AsyncRoot>
     </Loggers>
 </Configuration>
