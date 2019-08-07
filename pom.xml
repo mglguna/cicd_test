@@ -217,6 +217,11 @@
             <version>${munit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.splunk.logging</groupId>
+            <artifactId>splunk-library-javalogging</artifactId>
+            <version>1.7.2</version>
+        </dependency>
     </dependencies>
 
 	<repositories>
