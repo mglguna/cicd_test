@@ -33,7 +33,7 @@
               token="0dff3bb8-923a-4d7b-8a1a-1d7662aa81eb"
               host=""
               index="main"
-              source="apttusmain"
+              source=""
               sourcetype=""
               middleware=""
               send_mode="sequential"
