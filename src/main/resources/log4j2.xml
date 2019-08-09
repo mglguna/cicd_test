@@ -29,12 +29,12 @@
             </Policies>
         </RollingFile>
          <HttpEventCollectorLog4jAppender name="HttpEventCollectorLog4jAppender"
-              url="https://input-prd-p-kvqz7wbf3mg5.cloud.splunk.com:8088/services/collector/event"
+              url="https://input-prd-p-kvqz7wbf3mg5.cloud.splunk.com:8088"
               token="0dff3bb8-923a-4d7b-8a1a-1d7662aa81eb"
               host=""
               index="main"
-              source=""
-              sourcetype=""
+              source="http:muleSplunk-Integration"
+              sourcetype="log4j"
               middleware=""
               send_mode="sequential"
               batch_size_bytes="102400"
